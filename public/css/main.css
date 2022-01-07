@@ -41,3 +41,31 @@ body {
   gap: 1rem;
 }
 
+.subscribe h1 {
+  /* -style, -variant, -weight, -stretch, -size, line-height, e -family */
+  font: normal bold 2.25rem 'Poppins';
+  letter-spacing: 0.105em;
+
+  color: var(--purple);
+}
+
+.subscribe h2.timer {
+  font: normal normal 4.5rem 'Poppins';
+
+  color: var(--black);
+}
+
+.subscribe p.subscribe {
+  font: normal normal 0.875rem 'Poppins';
+
+  color: var(--light-grey);
+}
+
+.subscribe p.subscribe + button.subscribe {
+  border: 0;
+  border-radius: 0.6rem;
+  padding: 0.625rem;
+
+  color: #fff;
+  background-color: var(--purple);
+}

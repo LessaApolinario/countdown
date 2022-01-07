@@ -59,6 +59,19 @@ body {
   color: var(--black);
 }
 
+.subscribe .units {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 6rem;
+}
+
+.subscribe .units span {
+  font: normal normal 0.875rem 'Poppins';
+
+  color: var(--light-grey);
+}
+
 .subscribe p.subscribe {
   font: normal normal 0.875rem 'Poppins';
 

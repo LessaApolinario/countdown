@@ -52,14 +52,5 @@ const createCountdownTimer = () => {
 };
 
 button.addEventListener('click', () => {
-  const hasStartClass = button.classList.contains('start');
-
-  if (!hasStartClass) {
-    button.classList.add('start');
-    createCountdownTimer();
-  } else {
-    button.classList.remove('start');
-    clearInterval(createCountdownTimer());
-  }
+  createCountdownTimer();
 });
-// createCountdownTimer();

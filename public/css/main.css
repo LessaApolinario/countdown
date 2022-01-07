@@ -68,7 +68,7 @@ body {
   padding: 0 1rem;
 }
 
-.subscribe .units span {
+.subscribe .units span.timer-units {
   font: normal normal 0.875rem 'Poppins';
 
   color: var(--light-grey);

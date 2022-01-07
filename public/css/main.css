@@ -24,13 +24,16 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .container .mid {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 8rem;
 }
 
 .container div.subscribe {

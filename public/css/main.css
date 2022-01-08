@@ -97,3 +97,84 @@ body {
   color: #fff;
   background-color: var(--purple);
 }
+
+div.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--light-grey);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+div.form-container form.modal-form {
+  width: 20rem;
+  height: 20rem;
+  background-color: white;
+
+  padding: 6rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form p.name,
+form p.email {
+  font: normal normal 0.875rem 'Poppins';
+
+  color: var(--black);
+}
+
+form.modal-form p.email {
+  margin-top: 1rem;
+}
+
+form.modal-form p {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+form.modal-form div.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  width: 100%;
+  padding: 1rem;
+}
+
+form.modal-form div.buttons button {
+  border: 0;
+  border-radius: 0.625rem;
+  padding: 0.4rem;
+
+  width: 4rem;
+  /* height: 2.875rem; */
+  cursor: pointer;
+
+  background-color: var(--purple);
+}
+
+form.modal-form div.buttons button#submit {
+  color: #fff;
+
+  background-color: var(--purple);
+}
+
+form.modal-form div.buttons button#exit {
+  color: var(--black);
+
+  background-color: var(--light-grey);
+}
+
+div.close {
+  display: none;
+}

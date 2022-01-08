@@ -52,15 +52,42 @@ const countdown = (
 
 const button = document.querySelector('button.subscribe');
 
+// button.addEventListener('click', () => {
+//   setInterval(
+//     countdown,
+//     1000,
+//     2022,
+//     1,
+//     dayAsNumber,
+//     hourAsNumber,
+//     minuteAsNumber,
+//     secondAsNumber
+//   );
+// });
+
+// Using the form to activate the counting
+const modalContainer = document.querySelector('div.form-container');
+
 button.addEventListener('click', () => {
-  setInterval(
-    countdown,
-    1000,
-    2022,
-    1,
-    dayAsNumber,
-    hourAsNumber,
-    minuteAsNumber,
-    secondAsNumber
-  );
+  modalContainer.classList.remove('close');
+  modalContainer.classList.add('open');
+});
+
+const modalSubmitButton = document.querySelector('button#submit');
+// const modalForm = document.querySelector('form.modal-form');
+
+modalSubmitButton.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  modalContainer.classList.remove('open');
+  modalContainer.classList.add('close');
+
+  setInterval(countdown, 1000, 2022, 1, 10, 7, 30, 0);
+});
+
+const modalExitButton = document.querySelector('button#exit');
+
+modalExitButton.addEventListener('click', () => {
+  modalContainer.classList.remove('open');
+  modalContainer.classList.add('close');
 });

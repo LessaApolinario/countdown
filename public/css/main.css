@@ -53,25 +53,30 @@ body {
   color: var(--purple);
 }
 
-.subscribe h2.timer {
+.subscribe div.coming-soon div {
   font: normal normal 4.5rem 'Poppins';
 
   color: var(--black);
 }
 
-.subscribe .units {
+.subscribe .coming-soon .countdown {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  gap: 6rem;
-
+  justify-content: center;
+  gap: 0.8rem;
   padding: 0 1rem;
 }
 
-.subscribe .units span.timer-units {
+.subscribe .coming-soon .countdown div h3:first-child {
   font: normal normal 0.875rem 'Poppins';
 
   color: var(--light-grey);
+}
+
+.countdown div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .subscribe p.subscribe {

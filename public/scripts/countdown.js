@@ -1,56 +1,66 @@
-const timer = document.querySelector('h2.timer');
-const button = document.querySelector('button.subscribe');
+const containerDay = document.querySelector('.container-day .day');
+const containerHour = document.querySelector('.container-hour .hour');
+const containerMinute = document.querySelector('.container-minute .minute');
+const containerSecond = document.querySelector('.container-second .second');
 
-// The string that represents the time
-const timerValue = timer.textContent;
+const dayAsNumber = Number(containerDay.textContent);
+const hourAsNumber = Number(containerHour.textContent);
+const minuteAsNumber = Number(containerMinute.textContent);
+const secondAsNumber = Number(containerSecond.textContent);
 
-// Catching the elements for the countdown
-let timerDays = document.querySelector('span.days');
-let timerHours = document.querySelector('span.hours');
-let timerMinutes = document.querySelector('span.minutes');
-let timerSeconds = document.querySelector('span.seconds');
-
-// Catching the numbers
-let days = Number(timerDays.textContent);
-let hours = Number(timerHours.textContent);
-let minutes = Number(timerMinutes.textContent);
-let seconds = Number(timerSeconds.textContent);
-
-const createCountdownTimer = () => {
-  const countdown = setInterval(() => {
-    seconds--;
-    timerSeconds.textContent = seconds;
-
-    if (seconds === 0) {
-      timerSeconds.textContent = 59;
-      seconds = 59;
-
-      minutes--;
-      timerMinutes.textContent = minutes;
-    }
-
-    if (minutes === 0) {
-      timerMinutes.textContent = 59;
-      minutes = 59;
-
-      hours--;
-      timerHours.textContent = hours;
-    }
-
-    if (hours === 0) {
-      timerHours.textContent = 59;
-      hours = 59;
-
-      days--;
-      timerDays.textContent = days;
-    }
-
-    if (days === 0) {
-      clearInterval(countdown);
-    }
-  }, 1000);
+const displayTime = (day, hour, minute, second) => {
+  containerDay.textContent = day;
+  containerHour.textContent = hour;
+  containerMinute.textContent = minute;
+  containerSecond.textContent = second;
 };
 
+const countdown = (
+  year,
+  month,
+  numberDay,
+  numberHour,
+  numberMinute,
+  numberSecond
+) => {
+  const now = new Date().getTime();
+  const countdownDate = new Date(
+    year,
+    month,
+    numberDay,
+    numberHour,
+    numberMinute,
+    numberSecond,
+    0
+  ).getTime();
+  const gap = countdownDate - now;
+
+  const second = 1000;
+  const minute = second * 60;
+  const hour = minute * 60;
+  const day = hour * 24;
+
+  // Calculate the timer
+  const textDay = Math.floor(gap / day);
+  const textHour = Math.floor((gap % day) / hour);
+  const textMinute = Math.floor((gap % hour) / minute);
+  const textSecond = Math.floor((gap % minute) / second);
+
+  // display the time
+  displayTime(textDay, textHour, textMinute, textSecond);
+};
+
+const button = document.querySelector('button.subscribe');
+
 button.addEventListener('click', () => {
-  createCountdownTimer();
+  setInterval(
+    countdown,
+    1000,
+    2022,
+    1,
+    dayAsNumber,
+    hourAsNumber,
+    minuteAsNumber,
+    secondAsNumber
+  );
 });
